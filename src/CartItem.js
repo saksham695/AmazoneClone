@@ -1,8 +1,8 @@
 import React from "react";
-import "./Product.css";
+import "./CartItem.css";
 import { useStateValue } from "./StateProvider";
 
-function Product({ id, title, img, price, rating }) {
+function CartItem({ id, title, img, price, rating }) {
   const [{ basket }, dispatch] = useStateValue();
   console.log("BASKET", basket);
   const filledStar = [];
@@ -16,7 +16,7 @@ function Product({ id, title, img, price, rating }) {
   const addToBasket = () => {
     //dispatch the item into data layer
     dispatch({
-      type: "ADD_TO_BASKET",
+      type: "REMOVE_FROM_BASKET",
       item: {
         id,
         title,
@@ -27,27 +27,30 @@ function Product({ id, title, img, price, rating }) {
     });
   };
   return (
-    <div className="product">
-      <div className="product-info">
-        <p>{title}</p>
-        <p className="product-price">
+    <div className="item">
+      <img src={img} alt="item " className="item-image" />
+      <div className="item-info">
+        <p>
+          <strong>{title} </strong>
+        </p>
+        <p className="item-price">
           <small>$</small>
           <strong>{price}</strong>
         </p>
-        <div className="product-rating">
+        <div className="item-rating">
           <p>
             {filledStar.map((itr) => {
               if (itr) {
-                return <span className="product-rating-start">⭐</span>;
+                return <span className="item-rating-start">⭐</span>;
               }
             })}
           </p>
+
+          <button onClick={addToBasket}>Remove From Basket</button>
         </div>
       </div>
-      <img src={img} alt="Product " />
-      <button onClick={addToBasket}>Add to Basket</button>
     </div>
   );
 }
 
-export default Product;
+export default CartItem;

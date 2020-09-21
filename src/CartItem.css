@@ -1,0 +1,14 @@
+.item-image {
+  max-height: 200px;
+  width: 100px;
+  margin-top: 20px;
+}
+
+.item {
+  display: flex;
+  flex-direction: row;
+  max-height: fit-content;
+}
+.item-info {
+  margin-left: 20px;
+}

@@ -4,7 +4,7 @@ import "./Home.css";
 
 function Home() {
   return (
-    <div class="home">
+    <div className="home">
       <div className="home-container">
         <img
           className="home-image"
@@ -14,13 +14,15 @@ function Home() {
       </div>
       <div className="home-row">
         <Product
+          id="11"
           title="The Lean Startup: How Constant Innovation Creates Radically Successful Business Paperback"
           price="19.90"
           img="https://images-eu.ssl-images-amazon.com/images/I/51Zymoq7UnL._AC_SY400_.jpg"
           rating={4}
         />
         <Product
-          title="Kenwood kMix Stand Mixer for Baking , Stylish Kitchen Mixer with K-beater , Dough Hook and Whisk , 5 Litre Glass Bowl"
+          id="12"
+          title="Kenwood kMix Stand Mixer for Baking , Stylish Kitchen Mixer with K-beater , Dough Hook and Whisk , 5 Litre Glass"
           price="19.90"
           img="https://images-eu.ssl-images-amazon.com/images/I/51Zymoq7UnL._AC_SY400_.jpg"
           rating={4}
@@ -28,18 +30,21 @@ function Home() {
       </div>
       <div className="home-row">
         <Product
+          id="13"
           title="The lean startup"
           price="19.90"
           img="https://images-eu.ssl-images-amazon.com/images/I/51Zymoq7UnL._AC_SY400_.jpg"
           rating={4}
         />
         <Product
+          id="14"
           title="The lean startup"
           price="19.90"
           img="https://images-eu.ssl-images-amazon.com/images/I/51Zymoq7UnL._AC_SY400_.jpg"
           rating={2}
         />
         <Product
+          id="15"
           title="The lean startup"
           price="19.90"
           img="https://images-eu.ssl-images-amazon.com/images/I/51Zymoq7UnL._AC_SY400_.jpg"
@@ -48,6 +53,7 @@ function Home() {
       </div>
       <div className="home-row">
         <Product
+          id="16"
           title="The lean startup"
           price="19.90"
           img="https://images-eu.ssl-images-amazon.com/images/I/51Zymoq7UnL._AC_SY400_.jpg"
