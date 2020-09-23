@@ -19,10 +19,6 @@ function CartItem({ id, title, img, price, rating }) {
       type: "REMOVE_FROM_BASKET",
       item: {
         id,
-        title,
-        img,
-        price,
-        rating,
       },
     });
   };

@@ -1,13 +1,23 @@
 import SearchIcon from "@material-ui/icons/Search";
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 
+import { auth } from "./firebase";
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Header.css";
 import { useStateValue } from "./StateProvider";
 
 function Header() {
-  const [{ basket }, dispatch] = useStateValue();
+  const [{ basket, user }, dispatch] = useStateValue();
+
+  const handleAuthentication = () => {
+    if (user) {
+      auth.signOut();
+    }
+  };
+  // { ((mytextvar).length > maxlimit) ?
+  //   (((mytextvar).substring(0,maxlimit-3)) + '...') :
+  //   mytextvar }
   return (
     <div className="header">
       <Link to="/">
@@ -23,15 +33,23 @@ function Header() {
         <SearchIcon className="material-icons-search-icon" />
       </div>
       <div className="header-nav">
-        <div className="header-option">
-          <span className="header-option-line-one">Hello Guest</span>
-          <span className="header-option-line-two">Sign In</span>
-        </div>
+        <Link to={!user && "/login"}>
+          <div className="header-option" onClick={handleAuthentication}>
+            <span className="header-option-line-one">
+              Hello {user && `${user.email.substring(0, 5)}...`}
+            </span>
+            <span className="header-option-line-two">
+              {user ? "Sign Out" : "Sign-in"}
+            </span>
+          </div>
+        </Link>
+
         <div className="header-option">
           {" "}
           <span className="header-option-line-one">Returns</span>
           <span className="header-option-line-two">& Orders</span>
         </div>
+
         <div className="header-option">
           {" "}
           <span className="header-option-line-one">Your</span>
