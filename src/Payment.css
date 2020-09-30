@@ -1,0 +1,97 @@
+.payment {
+  display: flex;
+  flex-direction: column;
+  max-height: max-content;
+  background-color: white;
+}
+
+.payment-checkout {
+  border: 1px solid black;
+  background-color: rgb(234, 237, 237);
+  text-align: center;
+  padding: 10px;
+  font-weight: 400;
+  border-bottom: 1px solid lightgray;
+}
+
+.address-container {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  border-bottom: 1px solid gray;
+  margin-right: 2%;
+  margin-left: 2%;
+}
+
+.delivery-address {
+  font-size: 13px;
+  padding: 0;
+  margin: 0.5%;
+}
+
+.delivery-address-text-container {
+  margin-left: 2%;
+  padding-bottom: 2%;
+}
+
+.item-container {
+  margin-right: 2%;
+  margin-left: 2%;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid lightgray;
+}
+
+.payment-method {
+  margin-left: 2%;
+  margin-right: 2%;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+
+.card-detail-container {
+  width: 100%;
+}
+
+.payment-card-details {
+  font-size: 13px;
+  width: max-content;
+  margin-left: 2%;
+}
+
+.payment-title {
+  width: 10%;
+}
+
+.card-detail-from {
+  width: 50%;
+  margin-left: 2%;
+  border: 1px solid lightgray;
+}
+
+.payment-checkout-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 300px;
+  padding: 20px;
+  background-color: #f3f3f3;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  margin-bottom: 5%;
+}
+
+.payment-checkout-container > input {
+  margin-right: 5px;
+}
+
+.payment-checkout-container {
+  background-color: white;
+  border-radius: 2px;
+  border: 1px solid;
+  margin-top: 10px;
+  border-color: #a88734 #9c7e31 #846a29;
+  color: #111111;
+  margin-left: 2%;
+}

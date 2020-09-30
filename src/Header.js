@@ -3,21 +3,18 @@ import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 
 import { auth } from "./firebase";
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import "./Header.css";
 import { useStateValue } from "./StateProvider";
 
 function Header() {
   const [{ basket, user }, dispatch] = useStateValue();
-
+  const history = useHistory();
   const handleAuthentication = () => {
     if (user) {
       auth.signOut();
     }
   };
-  // { ((mytextvar).length > maxlimit) ?
-  //   (((mytextvar).substring(0,maxlimit-3)) + '...') :
-  //   mytextvar }
   return (
     <div className="header">
       <Link to="/">
@@ -44,11 +41,13 @@ function Header() {
           </div>
         </Link>
 
-        <div className="header-option">
-          {" "}
-          <span className="header-option-line-one">Returns</span>
-          <span className="header-option-line-two">& Orders</span>
-        </div>
+        <Link to={"/order"}>
+          <div className="header-option">
+            {" "}
+            <span className="header-option-line-one">Returns</span>
+            <span className="header-option-line-two">& Orders</span>
+          </div>
+        </Link>
 
         <div className="header-option">
           {" "}
